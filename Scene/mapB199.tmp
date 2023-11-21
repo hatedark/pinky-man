@@ -1,0 +1,120 @@
+[gd_scene load_steps=13 format=3 uid="uid://dpoq5po7vo5us"]
+
+[ext_resource type="Script" path="res://Script/map.gd" id="1_vwtcq"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_yu80a"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_2wgl2"]
+[ext_resource type="TileSet" uid="uid://cgvdset6avtko" path="res://Assets/tileset.tres" id="2_egadg"]
+[ext_resource type="PackedScene" uid="uid://v8u4fghx4uul" path="res://Scene/pink_man_scene.tscn" id="3_l3knf"]
+[ext_resource type="Texture2D" uid="uid://bxbdshp2b6dv1" path="res://Assets/background_layer_1.png" id="3_xnyu3"]
+[ext_resource type="Texture2D" uid="uid://bjxu8fd2lcm83" path="res://Assets/background_layer_2.png" id="4_kp5fw"]
+[ext_resource type="Texture2D" uid="uid://c3r3ygtrah01a" path="res://Assets/background_layer_3.png" id="5_kp861"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_1fm8f"]
+[ext_resource type="Texture2D" uid="uid://bqbnkcidtbsrr" path="res://Assets/Blue.png" id="10_o4kx4"]
+
+[sub_resource type="Resource" id="Resource_dm0pg"]
+script = ExtResource("8_1fm8f")
+duration = 0.6
+transition = 3
+ease = 1
+
+[sub_resource type="Curve2D" id="Curve2D_yaks8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 220, 451, 0, 0, 0, 0, 2070, 451)
+}
+point_count = 2
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_vwtcq")
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(3, 3)
+tile_set = ExtResource("2_egadg")
+format = 2
+layer_0/tile_data = PackedInt32Array(1245180, 458753, 0, 1245181, 458753, 0, 1245182, 458753, 0, 1245183, 458753, 0, 1179648, 458753, 0, 1179649, 458753, 0, 1179650, 458753, 0, 1179651, 458753, 0, 1179652, 458753, 0, 1179653, 458753, 0, 1179654, 458753, 0, 1179655, 458753, 0, 1179656, 458753, 0, 1179657, 458753, 0, 1179658, 458753, 0, 1179659, 458753, 0, 1179660, 458753, 0, 1179661, 458753, 0, 1179662, 458753, 0, 1179663, 458753, 0, 1179664, 458753, 0, 1179665, 458753, 0, 1179666, 458753, 0, 1179667, 458753, 0, 1179668, 458753, 0, 1179669, 458753, 0, 1179670, 458753, 0, 1179671, 458753, 0, 1179672, 458753, 0, 1179673, 458753, 0, 1179674, 458753, 0, 1179675, 458753, 0, 1179676, 458753, 0, 1179677, 458753, 0, 1179678, 458753, 0, 1179679, 458753, 0, 1179680, 458753, 0, 1179681, 458753, 0, 1179682, 458753, 0, 1179683, 458753, 0, 1245179, 458753, 0, 1245171, 458753, 0, 1245172, 458753, 0, 1245173, 458753, 0, 1245174, 458753, 0, 1245175, 458753, 0, 1245176, 458753, 0, 1245177, 458753, 0, 1245178, 458753, 0, 1179684, 458753, 0, 1179685, 458753, 0, 1179686, 458753, 0, 1179687, 458753, 0, 1179688, 458753, 0, 1179689, 458753, 0, 1179690, 458753, 0, 1179691, 458753, 0, 1179692, 458753, 0, 1179693, 458753, 0, 1179694, 458753, 0, 1179695, 458753, 0, 1179696, 458753, 0, 1179697, 458753, 0, 1179698, 458753, 0, 1179699, 458753, 0, 65523, 524289, 1, 131059, 524289, 1, 196595, 524289, 1, 262131, 524289, 1, 327667, 524289, 1, 393203, 524289, 1, 458739, 524289, 1, 524275, 524289, 1, 589811, 524289, 1, 655347, 524289, 1, 720883, 524289, 1, 786419, 524289, 1, 851955, 524289, 1, 917491, 524289, 1, 983027, 524289, 1, 1048563, 524289, 1, 1114099, 524289, 1, 1179635, 524289, 1, 60, 393217, 1, 65596, 393217, 1, 131132, 393217, 1, 196668, 393217, 1, 262204, 393217, 1, 327740, 393217, 1, 393276, 393217, 1, 458812, 393217, 1, 524348, 393217, 1, 589884, 393217, 1, 655420, 393217, 1, 720956, 393217, 1, 786492, 393217, 1, 852028, 393217, 1, 917564, 393217, 1, 983100, 393217, 1, 1048636, 393217, 1, 1114172, 393217, 1, 1179708, 458753, 0, 1179700, 458753, 0, 1179701, 458753, 0, 1179702, 458753, 0, 1179703, 458753, 0, 1179704, 458753, 0, 1179705, 458753, 0, 1179706, 458753, 0, 1179707, 458753, 0)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1600, 0)
+
+[node name="bg_1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(5, 5)
+texture = ExtResource("3_xnyu3")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1600, 0)
+
+[node name="bg_2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+scale = Vector2(5, 5)
+texture = ExtResource("4_kp5fw")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1600, 0)
+
+[node name="bg_3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+scale = Vector2(5, 5)
+texture = ExtResource("5_kp861")
+centered = false
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_l3knf")]
+position = Vector2(-43, 815)
+scale = Vector2(3, 3)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(220, 451)
+zoom = Vector2(0.1, 0.1)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+script = ExtResource("1_yu80a")
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+position = Vector2(220, 451)
+script = ExtResource("2_2wgl2")
+priority_override = null
+priority = 0
+zoom = Vector2(0.1, 0.1)
+follow_mode = 4
+follow_target = NodePath("../CharacterBody2D")
+follow_path = NodePath("../Path2D")
+follow_parameters/damping = false
+tween_parameters = SubResource("Resource_dm0pg")
+tween_on_load = true
+inactive_update_mode = 0
+
+[node name="Scale" type="Button" parent="PhantomCamera2D"]
+offset_left = -746.0
+offset_top = -413.0
+offset_right = -597.0
+offset_bottom = -382.0
+text = "Ini Tombol Scaling"
+
+[node name="Rotate" type="Button" parent="PhantomCamera2D"]
+offset_left = 589.0
+offset_top = -415.0
+offset_right = 735.0
+offset_bottom = -384.0
+text = "Ini Tombol Rotate
+"
+
+[node name="Mirror" type="Button" parent="PhantomCamera2D"]
+offset_left = -754.0
+offset_top = 348.0
+offset_right = -610.0
+offset_bottom = 379.0
+text = "Ini Tombol Mirror"
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_yaks8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(168, 830)
+texture = ExtResource("10_o4kx4")
+
+[connection signal="pressed" from="PhantomCamera2D/Scale" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PhantomCamera2D/Rotate" to="." method="_on_rotate_pressed"]
+[connection signal="pressed" from="PhantomCamera2D/Mirror" to="." method="_on_mirror_pressed"]

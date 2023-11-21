@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://cybrx2pi51bam"]
+
+[ext_resource type="Texture2D" uid="uid://bxbdshp2b6dv1" path="res://Assets/background_layer_1.png" id="1_m0eaq"]
+[ext_resource type="Script" path="res://Script/map_rotasi.gd" id="1_vk3bt"]
+[ext_resource type="Texture2D" uid="uid://bjxu8fd2lcm83" path="res://Assets/background_layer_2.png" id="2_px8nv"]
+[ext_resource type="Texture2D" uid="uid://c3r3ygtrah01a" path="res://Assets/background_layer_3.png" id="3_hmkh1"]
+[ext_resource type="TileSet" uid="uid://cgvdset6avtko" path="res://Assets/tileset.tres" id="4_goshx"]
+[ext_resource type="PackedScene" uid="uid://cnj72bcyamy7d" path="res://Scene/Player/Player.tscn" id="5_x2uf4"]
+[ext_resource type="Texture2D" uid="uid://bqbnkcidtbsrr" path="res://Assets/Blue.png" id="7_c0ldh"]
+
+[node name="map_rotasi" type="Node2D"]
+script = ExtResource("1_vk3bt")
+
+[node name="bg" type="Node2D" parent="."]
+scale = Vector2(3.7, 3.7)
+
+[node name="bg_layer_1" type="Sprite2D" parent="bg"]
+texture = ExtResource("1_m0eaq")
+centered = false
+
+[node name="bg_layer_2" type="Sprite2D" parent="bg"]
+texture = ExtResource("2_px8nv")
+centered = false
+
+[node name="bg_layer_3" type="Sprite2D" parent="bg"]
+texture = ExtResource("3_hmkh1")
+centered = false
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(2.2, 2.2)
+tile_set = ExtResource("4_goshx")
+format = 2
+layer_0/tile_data = PackedInt32Array(1179648, 458753, 0, 1179649, 458753, 0, 1179650, 458753, 0, 1179651, 458753, 0, 1179652, 458753, 0, 1179653, 458753, 0, 1179654, 458753, 0, 1179655, 458753, 0, 1179656, 458753, 0, 1179657, 458753, 0, 1179658, 458753, 0, 1179659, 458753, 0, 1179660, 458753, 0, 1179661, 458753, 0, 1179662, 458753, 0, 1179663, 458753, 0, 1179664, 458753, 0, 1179665, 458753, 0, 1179666, 458753, 0, 1179667, 458753, 0, 1179668, 458753, 0, 1179669, 458753, 0, 1179670, 458753, 0, 1179671, 458753, 0, 1179672, 458753, 0, 1179673, 458753, 0, 1179674, 458753, 0, 1179675, 458753, 0, 1179676, 458753, 0, 1179677, 458753, 0, 1179678, 458753, 0, 1179679, 458753, 0, 1179680, 458753, 0, 65535, 524289, 1, 131071, 524289, 1, 196607, 524289, 1, 262143, 524289, 1, 327679, 524289, 1, 393215, 524289, 1, 458751, 524289, 1, 524287, 524289, 1, 589823, 524289, 1, 655359, 524289, 1, 720895, 524289, 1, 786431, 524289, 1, 851967, 524289, 1, 917503, 524289, 1, 983039, 524289, 1, 1048575, 524289, 1, 1114111, 524289, 1, 1179647, 524289, 1, 33, 393217, 1, 65569, 393217, 1, 131105, 393217, 1, 196641, 393217, 1, 262177, 393217, 1, 327713, 393217, 1, 393249, 393217, 1, 458785, 393217, 1, 524321, 393217, 1, 589857, 393217, 1, 655393, 393217, 1, 720929, 393217, 1, 786465, 393217, 1, 852001, 393217, 1, 917537, 393217, 1, 983073, 393217, 1, 1048609, 393217, 1, 1114145, 393217, 1)
+
+[node name="PinkMan" parent="." instance=ExtResource("5_x2uf4")]
+position = Vector2(37, 601)
+scale = Vector2(2, 2)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Pusat" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("7_c0ldh")
