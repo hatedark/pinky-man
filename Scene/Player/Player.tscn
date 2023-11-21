@@ -753,6 +753,7 @@ script = ExtResource("11_c8hsj")
 ground_state = NodePath("../GroundPlayerState")
 
 [node name="StateDebugLabel" type="Label" parent="." node_paths=PackedStringArray("state_machine")]
+visible = false
 offset_left = -37.0
 offset_top = -34.0
 offset_right = 3.0
