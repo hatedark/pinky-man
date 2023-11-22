@@ -1,3 +1,49 @@
-[gd_scene format=3 uid="uid://dkwxyd22sbfy0"]
+[gd_scene load_steps=9 format=3 uid="uid://dkwxyd22sbfy0"]
+
+[ext_resource type="PackedScene" uid="uid://qe3cm84uhe06" path="res://Stage/background.tscn" id="1_v4n83"]
+[ext_resource type="PackedScene" uid="uid://ca2alabo5x0rj" path="res://Stage/tile_map.tscn" id="2_rye07"]
+[ext_resource type="Texture2D" uid="uid://d2be8armj1iny" path="res://Free/Items/Checkpoints/End/End (Idle).png" id="3_l1yxg"]
+[ext_resource type="Texture2D" uid="uid://cmfemhq34lmu0" path="res://Free/Traps/Spikes/Idle.png" id="4_g6x6b"]
+[ext_resource type="Texture2D" uid="uid://bck8fwwsbj80p" path="res://Free/Items/Checkpoints/Start/Start (Idle).png" id="5_wxbc7"]
+[ext_resource type="Texture2D" uid="uid://d2thvrtffq082" path="res://Free/Traps/Trampoline/Idle.png" id="6_kf6ri"]
+[ext_resource type="Texture2D" uid="uid://b1memlbvlv4ym" path="res://Free/Items/Fruits/Melon.png" id="7_xtakw"]
+[ext_resource type="PackedScene" uid="uid://cnj72bcyamy7d" path="res://Scene/Player/Player.tscn" id="8_u8bn8"]
 
 [node name="Stage 2" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_v4n83")]
+position = Vector2(-2, 3)
+
+[node name="TileMap" parent="." instance=ExtResource("2_rye07")]
+layer_0/tile_data = PackedInt32Array(851968, 458753, 0, 851969, 458753, 0, 851970, 458753, 0, 851971, 458753, 0, 851972, 458753, 0, 851973, 458753, 0, 851974, 458753, 0, 851975, 458753, 0, 851976, 458753, 0, 851977, 458753, 0, 851978, 458753, 0, 851979, 458753, 0, 851980, 458753, 0, 851981, 458753, 0, 851982, 458753, 0, 851983, 458753, 0, 851984, 458753, 0, 851985, 458753, 0, 851986, 458753, 0, 851987, 458753, 0, 851988, 458753, 0, 851989, 458753, 0, 851990, 458753, 0, 851991, 458753, 0, 65535, 983041, 0, 131071, 983041, 1, 196607, 983041, 2, 262143, 983041, 0, 327679, 983041, 1, 393215, 983041, 2, 458751, 983041, 0, 524287, 983041, 1, 589823, 983041, 2, 655359, 983041, 0, 720895, 983041, 1, 786431, 983041, 2, 24, 983041, 0, 65560, 983041, 1, 131096, 983041, 2, 196632, 983041, 0, 262168, 983041, 1, 327704, 983041, 2, 393240, 983041, 0, 458776, 983041, 1, 524312, 983041, 2, 589848, 983041, 0, 655384, 983041, 1, 720920, 983041, 2, 917503, 393217, 0, 851992, 393217, 0, 851967, 786433, 1, 786456, 786433, 1, 0, 786433, 0, 1, 851969, 0, 2, 917505, 0, 3, 786433, 0, 4, 851969, 0, 5, 917505, 0, 6, 786433, 0, 7, 851969, 0, 8, 917505, 0, 9, 786433, 0, 10, 851969, 0, 11, 917505, 0, 12, 786433, 0, 13, 851969, 0, 14, 917505, 0, 15, 786433, 0, 16, 851969, 0, 17, 917505, 0, 18, 786433, 0, 19, 851969, 0, 20, 917505, 0, 21, 786433, 0, 22, 851969, 0, 23, 917505, 0, 786435, 1114113, 1, 786436, 1179649, 1, 786437, 1245185, 1, 786438, 1114113, 1, 786439, 1179649, 1, 786440, 1245185, 1, 786441, 1114113, 1, 786442, 1179649, 1, 786443, 1245185, 1, 786444, 1114113, 1, 786445, 1179649, 1, 786446, 1245185, 1, 786447, 1114113, 1, 786448, 1179649, 1, 786449, 1245185, 1, 786450, 1114113, 1, 786451, 1179649, 1, 786452, 1245185, 1, 786453, 1114113, 1, 786454, 1179649, 1, 786455, 1245185, 1, 589824, 1114113, 1, 589825, 1179649, 1, 589826, 1245185, 1, 458757, 1114113, 1, 458758, 1179649, 1, 458759, 1245185, 1, 589834, 1114113, 1, 589835, 1179649, 1, 196629, 1114113, 1, 196630, 1179649, 1, 196631, 1245185, 1, 196620, 983041, 0, 262156, 983041, 1, 327692, 983041, 2, 393228, 983041, 0, 458764, 983041, 1, 524300, 983041, 2, 196618, 1114113, 1, 196619, 1245185, 1, 327693, 786433, 0, 327694, 851969, 0, 327695, 917505, 0, 327696, 786433, 0, 327697, 851969, 0, 327698, 917505, 0, 589836, 983041, 0, 655372, 983041, 1, 720908, 983041, 2, 524303, 786433, 0, 524304, 851969, 0, 524305, 917505, 0, 524306, 786433, 0, 524307, 851969, 0, 524308, 917505, 0, 524309, 786433, 0, 524310, 851969, 0, 524311, 917505, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1126, 597.5)
+scale = Vector2(0.78125, 0.796875)
+texture = ExtResource("3_l1yxg")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(586, 72)
+rotation = 3.14159
+scale = Vector2(4.69531, 2.71094)
+texture = ExtResource("4_g6x6b")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(51.9999, 576.75)
+scale = Vector2(1.625, 1.39844)
+texture = ExtResource("5_wxbc7")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(664, 540)
+scale = Vector2(2.05246, 2.11272)
+texture = ExtResource("6_kf6ri")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1078, 108)
+scale = Vector2(2.55555, 2.25)
+texture = ExtResource("7_xtakw")
+hframes = 20
+
+[node name="Player" parent="." instance=ExtResource("8_u8bn8")]
+position = Vector2(184, 524)
+scale = Vector2(3, 3)
