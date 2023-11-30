@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Pink Man On The Platform"
-run/main_scene="res://Scene/map_1.tscn"
+run/main_scene="res://Map/Main Menu/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
+
+[debug]
+
+gdscript/warnings/unused_parameter=0
 
 [display]
 

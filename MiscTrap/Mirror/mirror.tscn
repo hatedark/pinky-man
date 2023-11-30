@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://ne75no7oh213"]
+
+[ext_resource type="Shader" path="res://MiscTrap/Mirror/Mirror.gdshader" id="1_2trfk"]
+[ext_resource type="Texture2D" uid="uid://b0hrmgqwvst1o" path="res://icon.svg" id="2_uxvie"]
+[ext_resource type="Script" path="res://MiscTrap/Mirror/Mirror.gd" id="3_616iq"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cc4mb"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_171rn"]
+seamless = true
+noise = SubResource("FastNoiseLite_cc4mb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1lut4"]
+shader = ExtResource("1_2trfk")
+shader_parameter/scale = Vector2(9.00915, 1.12165)
+shader_parameter/y_zoom = 1.0
+shader_parameter/water_color = Color(0, 0, 0.729412, 0.27451)
+shader_parameter/distortion_scale = Vector2(0.02, 0.3)
+shader_parameter/intensity = 0.02
+shader_parameter/speed = 0.05
+shader_parameter/wave_amplitude = -0.009
+shader_parameter/wave_speed = 2.18
+shader_parameter/wave_period = 0.395
+shader_parameter/noise = SubResource("NoiseTexture2D_171rn")
+
+[node name="Mirror" type="Sprite2D"]
+material = SubResource("ShaderMaterial_1lut4")
+texture = ExtResource("2_uxvie")
+script = ExtResource("3_616iq")
+
+[connection signal="item_rect_changed" from="." to="." method="_on_item_rect_changed"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://m51niundg7co"]
+
+[ext_resource type="PackedScene" uid="uid://qe3cm84uhe06" path="res://Scene/background.tscn" id="1_eh82x"]
+[ext_resource type="Script" path="res://Map/Stage Dilatasi/stage_dilatasi.gd" id="1_eu8ie"]
+[ext_resource type="PackedScene" uid="uid://ca2alabo5x0rj" path="res://Scene/tile_map.tscn" id="2_fbaso"]
+[ext_resource type="PackedScene" uid="uid://cnj72bcyamy7d" path="res://Scene/Player/Player.tscn" id="3_3mhub"]
+[ext_resource type="PackedScene" uid="uid://67iftkoto0aw" path="res://Scene/Camera/camera.tscn" id="4_p7boc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xf0xf"]
+size = Vector2(2252, 654)
+
+[node name="Stage Dilatasi" type="Node2D" node_paths=PackedStringArray("player_camera", "platforming_player")]
+script = ExtResource("1_eu8ie")
+player_camera = NodePath("Camera")
+platforming_player = NodePath("Player")
+
+[node name="Background" parent="." instance=ExtResource("1_eh82x")]
+
+[node name="TileMap" parent="." instance=ExtResource("2_fbaso")]
+layer_0/tile_data = PackedInt32Array(851968, 458753, 0, 851969, 458753, 0, 851970, 458753, 0, 851971, 458753, 0, 851972, 458753, 0, -65536, 786433, 0, -65535, 851969, 0, -65534, 917505, 0, -65533, 786433, 0, -65532, 851969, 0, -65531, 917505, 0, -65530, 786433, 0, -65529, 851969, 0, -65528, 917505, 0, -65527, 786433, 0, -65526, 851969, 0, -65525, 917505, 0, -65524, 786433, 0, -65523, 851969, 0, -65522, 917505, 0, -65521, 786433, 0, -65520, 851969, 0, -65519, 917505, 0, -65518, 786433, 0, -65517, 851969, 0, -65516, 917505, 0, -1, 983041, 0, 65535, 983041, 1, 131071, 983041, 2, 196607, 983041, 0, 262143, 983041, 1, 327679, 983041, 2, 393215, 983041, 0, 458751, 983041, 1, 524287, 983041, 2, -65512, 786433, 0, 589823, 983041, 0, 655359, 983041, 1, 720895, 983041, 2, 786431, 983041, 0, 851967, 983041, 1, 917503, 983041, 2, 852011, 458753, 0, 852012, 458753, 0, 852013, 458753, 0, 852014, 458753, 0, -65515, 786433, 0, -65514, 851969, 0, -65513, 917505, 0, -65511, 851969, 0, -65510, 917505, 0, -65509, 786433, 0, -65508, 851969, 0, -65507, 917505, 0, -65506, 786433, 0, -65505, 851969, 0, -65504, 917505, 0, -65502, 851969, 0, -65501, 917505, 0, -65500, 786433, 0, -65503, 786433, 0, -65499, 851969, 0, -65498, 917505, 0, -65497, 786433, 0, -65496, 851969, 0, -65495, 917505, 0, -65494, 786433, 0, -65493, 851969, 0, -65492, 917505, 0, -65491, 786433, 0, -65490, 851969, 0, -65489, 917505, 0, 47, 983041, 0, 65583, 983041, 1, 131119, 983041, 2, 196655, 983041, 0, 262191, 983041, 1, 327727, 983041, 2, 393263, 983041, 0, 458799, 983041, 1, 524335, 983041, 2, 589871, 983041, 0, 655407, 983041, 1, 720943, 983041, 2, 786479, 983041, 0, 852015, 983041, 1)
+
+[node name="Player" parent="." node_paths=PackedStringArray("stage") instance=ExtResource("3_3mhub")]
+position = Vector2(33, 592)
+stage = NodePath("..")
+
+[node name="Camera" parent="." node_paths=PackedStringArray("stage") instance=ExtResource("4_p7boc")]
+stage = NodePath("..")
+
+[node name="Room" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room"]
+position = Vector2(1129, 326)
+shape = SubResource("RectangleShape2D_xf0xf")

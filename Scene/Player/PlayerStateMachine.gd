@@ -3,6 +3,7 @@ extends Node
 class_name PlayerStateMachine
 
 @export var PLAYER: CharacterBody2D
+@export var ANIMATION_TREE: AnimationTree
 @export var CURRENT_STATE: StateMachine
 var states: Array[StateMachine]
 
@@ -13,6 +14,7 @@ func _ready():
 			
 			# Set the states up with what they need to function
 			child.PLAYER = PLAYER
+			child.playback = ANIMATION_TREE["parameters/playback"]
 			
 		else:
 			push_warning("Child ", child.name, " is not a State for PlayerStateMachine")
