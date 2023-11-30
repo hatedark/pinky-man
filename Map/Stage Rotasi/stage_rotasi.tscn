@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdnk68wvdh740"]
+[gd_scene load_steps=9 format=3 uid="uid://bdnk68wvdh740"]
 
 [ext_resource type="Script" path="res://Map/Stage Rotasi/stage_rotasi.gd" id="1_rwesi"]
 [ext_resource type="PackedScene" uid="uid://qe3cm84uhe06" path="res://Scene/background.tscn" id="1_xmnvk"]
 [ext_resource type="PackedScene" uid="uid://ca2alabo5x0rj" path="res://Scene/tile_map.tscn" id="2_q0jj8"]
 [ext_resource type="PackedScene" uid="uid://cnj72bcyamy7d" path="res://Scene/Player/Player.tscn" id="3_58fxh"]
 [ext_resource type="PackedScene" uid="uid://67iftkoto0aw" path="res://Scene/Camera/camera.tscn" id="4_7j103"]
+[ext_resource type="PackedScene" uid="uid://b36dw66eswsqk" path="res://Scene/Platform Putar/rounded_platform.tscn" id="6_thnps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4pmt"]
 size = Vector2(2252, 654)
@@ -43,5 +44,22 @@ shape = SubResource("RectangleShape2D_n4pmt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Death Area"]
 position = Vector2(1154.5, 692)
 shape = SubResource("RectangleShape2D_eks54")
+
+[node name="Platform" type="Node2D" parent="."]
+
+[node name="Rounding Platform" parent="Platform" instance=ExtResource("6_thnps")]
+position = Vector2(387, 447)
+
+[node name="Rounding Platform2" parent="Platform" instance=ExtResource("6_thnps")]
+position = Vector2(796, 450)
+
+[node name="Rounding Platform3" parent="Platform" instance=ExtResource("6_thnps")]
+position = Vector2(1161, 453)
+
+[node name="Rounding Platform4" parent="Platform" instance=ExtResource("6_thnps")]
+position = Vector2(1488, 449)
+
+[node name="Rounding Platform5" parent="Platform" instance=ExtResource("6_thnps")]
+position = Vector2(1842, 450)
 
 [connection signal="body_entered" from="Death Area" to="." method="_on_death_area_body_entered"]

@@ -4,6 +4,7 @@ extends Node2D
  
 @export var player_camera: Camera2D
 @export var platforming_player: CharacterBody2D
+@onready var animation_player = $AnimationPlayer
 
 var room_pause: bool = false
 @export var room_pause_time: float = 0.2

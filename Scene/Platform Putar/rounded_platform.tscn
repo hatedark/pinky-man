@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b36dw66eswsqk"]
+
+[ext_resource type="Texture2D" uid="uid://dlwihvar4mqao" path="res://Assets/Terrain (16x16).png" id="1_eo53b"]
+[ext_resource type="Script" path="res://Scene/Platform Putar/rounded_platform.gd" id="1_yft37"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65mhe"]
+size = Vector2(16, 17.3333)
+
+[node name="Rounding Platform" type="Node2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_yft37")
+
+[node name="Pusat" type="Sprite2D" parent="."]
+
+[node name="Platform" type="Sprite2D" parent="."]
+position = Vector2(-43, 38)
+texture = ExtResource("1_eo53b")
+hframes = 22
+vframes = 10
+frame = 29
+region_rect = Rect2(114.452, 25.0645, 60.5398, 49.0691)
+
+[node name="AnimatableBody2D" type="CharacterBody2D" parent="Platform"]
+position = Vector2(43, -38)
+collision_priority = 99.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/AnimatableBody2D"]
+position = Vector2(-43, 38)
+shape = SubResource("RectangleShape2D_65mhe")

@@ -12,8 +12,8 @@ noise = SubResource("FastNoiseLite_cc4mb")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1lut4"]
 shader = ExtResource("1_2trfk")
-shader_parameter/scale = Vector2(9.00915, 1.12165)
-shader_parameter/y_zoom = 1.0
+shader_parameter/scale = Vector2(17.6719, 2.29688)
+shader_parameter/y_zoom = 1.05946
 shader_parameter/water_color = Color(0, 0, 0.729412, 0.27451)
 shader_parameter/distortion_scale = Vector2(0.02, 0.3)
 shader_parameter/intensity = 0.02
